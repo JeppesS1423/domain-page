@@ -10,12 +10,31 @@
       src: url('fonts/ProFontWindows.ttf') format('truetype');
     }
     body {
-      color: #eee8d5;
-      background-color: #060610;
+      color: #FFFFFA;
+      background-color: #121216;
       font-family: 'ProFontWindows', monospace;
     }
+    h1 {
+      font-size: 4rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    h3 {
+      font-size: 1.6rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    p {
+      font-size: 1.2rem;
+      text-align: justify;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
     #bg-video {
-      position: fixed;
+      background-color: #121216;
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
@@ -24,14 +43,13 @@
       object-position: top;
       object-fit: cover;
       z-index: -1;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%);
-      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%);
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 48%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 48%);
     }
     .clickable-text {
       font-size: 1.5rem;
       color: #FAA613;
       cursor: pointer;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
     }
     .clickable-text:hover {
       color: #FCCA73;
@@ -43,18 +61,10 @@
       margin-right: auto;
     }
     .introduction h1 {
-      font-size: 4rem;
       font-weight: bold;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
-    }
-    .introduction h2 {
-      font-size: 2rem;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
     }
     .introduction p {
       font-size: 1.5rem;
-      text-align: justify;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
     }
     .email {
       display: flex;
@@ -64,15 +74,10 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .email h2 {
-      font-weight: bold;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
-    }
     .email span {
       font-size: 1.4rem;
       display: none;
       color: #49C171;
-      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
     }
     .social-links {
       display: flex;
@@ -81,43 +86,91 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .social-links button {
+    .social-links a {
       background: #FAA613;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       text-align: left;
       cursor: pointer;
-      min-width: 125px;
-      min-height: 35px;
+      min-width: 120px;
+      min-height: 30px;
       font-family: inherit;
       border-radius: 10px;
-      border-color: #060610;
+      text-decoration: none;
+      padding: 0 10px;
+      color: #121216;
     }
-    .social-links button:hover {
-      background-color: #FCCA73;
+    .social-links a:hover {
+      background: #FCCA73;
+    }
+    .projects-display {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 400px);
+      justify-content: center;
+      gap: 20px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+    }
+    .project-card {
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      background: #1F1F1F;
+      text-align: center;
+      height: 600px;
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: #FAA613;
+      cursor: pointer;
+    }
+    .highlight {
+      color: #B94849;
+    }
+    .source-code-link {
+      margin-top: auto;
+      margin-bot: 0px;
+      text-align: right;
+    }
+    .source-code-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <video id="bg-video" autoplay muted loop playsinline>
+  <video id="bg-video" autoplay muted loop playsinline preload="auto">
     <source src="assets/background.mp4" type="video/mp4">
   </video>
   <div class="introduction">
     <h1>Jesper Härnlund</h1>
     <h2>Software Developer specialized in Data Science and AI</h2>
-    <p>With a background in metalwork industries, I have an understanding of how software is used in the real world. Having pivoted to software development, I focused on Python with data science, machine learning and modern AI. Together with a vocational education and internships I've been part of real research on the health impact of airborne particles, and building scaleable software. Recently I've been working with Linux server management and networking, hosting my own apps and services.</p>
+    <p>With a background in metalwork industries, I have an understanding of how software is used in the real world. Having pivoted to software development, I focused on Python with data science, machine learning and modern AI. Together with a vocational education and internships I've been part of real research on the health impact of airborne particles, and working on enterprise software.<br><br>Recently I've been working with Linux server management and networking, hosting my own apps and services.</p>
   </div>
   <div class="email">
-    <h2>Email: </h2>
+    <h3>Email: </h3>
     <p class="clickable-text" onclick="copyEmail(this)">contact [at] jesperh [dot] com</p>
     <span id="copied-message">-> Copied!</span>
   </div>
   <div class="social-links">
-    <button onclick="window.open('https://github.com/JeppesS1423', '_blank')"><i class="fa-brands fa-github"></i> Github</button>
-    <button onclick="window.open('https://www.linkedin.com/in/jesper-h%C3%A4rnlund-a77b6722b/', '_blank')"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
-    <button onclick="window.open('https://www.youtube.com/@JesperH-xyz', '_blank')"><i class="fa-brands fa-youtube"></i> YouTube</button>
+    <a href="https://github.com/JeppesS1423" target="_blank"><i class="fa-brands fa-github"></i> Github</a>
+    <a href="https://www.linkedin.com/in/jesper-h%C3%A4rnlund-a77b6722b/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <a href="https://www.youtube.com/@JesperH-xyz" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+  </div>
+  <h2 style=padding-top:160px;>Things I've worked on</h2>
+  <div class="projects-display">
+    <div class="project-card" onclick="window.open('https://factaday.jesperh.com', '_blank')">
+      <h2 class="project-card-title">factaday</h2>
+      <!-- 16:9 aspect ratio, 360px wide --!>
+      <img src="assets/factaday.png">
+      <p>A small app made using <span class="highlight">FastAPI</span> to generate and display one random fact, and previous ones, every day using <span class="highlight">Anthropic's Claude</span>. Only one fact is generated per day and it's triggered by the first user who enters the site that day. Every fact is saved and fetched from a <span class="highlight">SQLite</span> database and the application is hosted on my personal <span class="highlight">VPS</span> using <span class="highlight">Docker</span> and <span class="highlight">Docker Compose</span>, utilizing <span class="highlight">Caddy</span> as a reverse proxy to serve the app on my own domain.</p>
+      <p class="clickable-text source-code-link" onclick="event.stopPropagation(); window.open('https://github.com/JeppesS1423/factaday', '_blank')">source code -></p>
+    </div>
   </div>
 <script>
   function copyEmail(element) {
