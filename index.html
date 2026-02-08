@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="UTF-8">
+  <title>Jesper H</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @font-face {
+      font-family: 'ProFontWindows';
+      src: url('fonts/ProFontWindows.ttf') format('truetype');
+    }
+    body {
+      color: #eee8d5;
+      background-color: #060610;
+      font-family: 'ProFontWindows', monospace;
+    }
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(20px);
+      object-position: top;
+      object-fit: cover;
+      z-index: -1;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%);
+      -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 80%);
+    }
+    .clickable-text {
+      font-size: 1.5rem;
+      color: #FAA613;
+      cursor: pointer;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    .clickable-text:hover {
+      color: #FCCA73;
+    }
+    .introduction {
+      text-align: center;
+      max-width: 800px; 
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .introduction h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    .introduction h2 {
+      font-size: 2rem;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    .introduction p {
+      font-size: 1.5rem;
+      text-align: justify;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    .email {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .email h2 {
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    .email span {
+      font-size: 1.4rem;
+      display: none;
+      color: #49C171;
+      text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    }
+    .social-links {
+      display: flex;
+      gap: 10px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .social-links button {
+      background: #FAA613;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.5rem;
+      text-align: left;
+      cursor: pointer;
+      min-width: 125px;
+      min-height: 35px;
+      font-family: inherit;
+      border-radius: 10px;
+      border-color: #060610;
+    }
+    .social-links button:hover {
+      background-color: #FCCA73;
+    }
+  </style>
+</head>
+<body>
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="assets/background.mp4" type="video/mp4">
+  </video>
+  <div class="introduction">
+    <h1>Jesper Härnlund</h1>
+    <h2>Software Developer specialized in Data Science and AI</h2>
+    <p>With a background in metalwork industries, I have an understanding of how software is used in the real world. Having pivoted to software development, I focused on Python with data science, machine learning and modern AI. Together with a vocational education and internships I've been part of real research on the health impact of airborne particles, and building scaleable software. Recently I've been working with Linux server management and networking, hosting my own apps and services.</p>
+  </div>
+  <div class="email">
+    <h2>Email: </h2>
+    <p class="clickable-text" onclick="copyEmail(this)">contact [at] jesperh [dot] com</p>
+    <span id="copied-message">-> Copied!</span>
+  </div>
+  <div class="social-links">
+    <button onclick="window.open('https://github.com/JeppesS1423', '_blank')"><i class="fa-brands fa-github"></i> Github</button>
+    <button onclick="window.open('https://www.linkedin.com/in/jesper-h%C3%A4rnlund-a77b6722b/', '_blank')"><i class="fa-brands fa-linkedin"></i> LinkedIn</button>
+    <button onclick="window.open('https://www.youtube.com/@JesperH-xyz', '_blank')"><i class="fa-brands fa-youtube"></i> YouTube</button>
+  </div>
+<script>
+  function copyEmail(element) {
+    const email = element.textContent
+      .replace(' [at] ', '@')
+      .replace(' [dot] ', '.');
+
+    navigator.clipboard.writeText(email);
+  
+    const message = document.getElementById('copied-message');
+    message.style.display = 'inline';
+  
+    setTimeout(() => {
+      message.style.display = 'none';
+    }, 2000);
+  }
+</script>
+</body>
+</html>
