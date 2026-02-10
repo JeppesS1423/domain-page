@@ -110,7 +110,7 @@
       grid-template-columns: repeat(auto-fit, 400px);
       justify-content: center;
       gap: 20px;
-      max-width: 1200px;
+      max-width: 1400px;
       margin-left: auto;
       margin-right: auto;
       padding: 20px;
@@ -129,6 +129,7 @@
     .project-card:hover {
       border-color: #FAA613;
       cursor: pointer;
+      transform: translateY(-5px);
     }
     .highlight {
       color: #B94849;
@@ -175,8 +176,14 @@
       <h2 class="project-card-title">nightingale</h2>
       <!-- 16:9 aspect ratio, 360px wide --!>
       <img src="assets/nightingale.png">
-      <p>An ongoing research project on cardiovascular health based in Germany. I was part of the <span class="highlight">Data Science & AI</span> team gathering data on pm2.5 and pm10 particle density in the air and highlightning fundamental links between it and health issues. I used <span class="highlight">Python</span> to build <span class="highlight">webscrapers</span> to scrape data from a variety of sources, including community sensors and satellite data. Using <span class="highlight">Pandas & Matplotlib</span> to understand and refine the data I was working on and creating understandable graphs. </p>
+      <p>An ongoing research project on cardiovascular health based in Germany. I was part of the <span class="highlight">Data Science & AI</span> team gathering data on pm2.5 and pm10 particle density in the air and highlightning fundamental links between it and health issues. I used <span class="highlight">Python</span> to build <span class="highlight">webscrapers</span> to scrape data from a variety of sources, including community sensors and satellite data. Using <span class="highlight">Pandas & Matplotlib</span> to understand and refine the data I was working on and creating understandable graphs.</p>
       <p class="clickable-text source-code-link" onclick="event.stopPropagation(); window.open('https://github.com/JeppesS1423/jgu-mainz-airquality-analysis', '_blank')">source code -></p>
+    </div>
+    <div class="project-card" onclick="window.open('https://www.svt.se/nyheter/lokalt/sormland/nytt-ai-verktyg-utvecklat-i-katrineholm-ska-bli-mentor-i-skolan', '_blank')">
+    <h2 class="project-card-title">skai</h2>
+      <!-- 16:9 aspect ratio, 360px wide --!>
+      <img src="assets/skai.png">
+      <p>A collaborative project with Katrineholm's municipality, Sweden, to both modernize and digitilize their workflows using common practices such as <span class="highlight">OCR</span> document readers and educations on the usecases of <span class="highlight">AI</span>. Our most in-depth project was skai, a school system / learning platform with <span class="highlight">integrated AI</span>, both helping teacher's with assignment creation and correction, and with students regarding common questions about their assignment. We used a model from <span class="hightlight">OpenAI</span>, and using both real and artificial assignment data we <span class="highlight">finetuned</span> the model to limit it's creative abilities and to make it help the students in a more pedagogical way. This project got national <span class="highlight">news coverage</span> in Sweden.</p>
     </div>
   </div>
 <script>
